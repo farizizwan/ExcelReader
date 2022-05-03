@@ -37,4 +37,4 @@ msbuild.wrn
 .vs/
 
 #React
-ClientApp/node_modules
+[Cc]lientApp/node_modules/
