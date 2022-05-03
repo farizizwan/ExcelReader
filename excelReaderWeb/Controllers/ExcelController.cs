@@ -8,7 +8,7 @@ namespace excelReaderWeb.Controllers
     [Route("[controller]")]
     public class ExcelController : ControllerBase
     {
-        private static readonly string fileName = @"C:\Users\fariz_izwan_ishak\Documents\Source Code\excelReaderWeb\sampleData.xlsx";
+        private static readonly string fileName = @"..\sampleData.xlsx";
         private readonly IExcelService _excelService;
 
         public ExcelController(IExcelService excelService)
