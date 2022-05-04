@@ -1,6 +1,7 @@
 ﻿using excelReaderWeb.Services.Contract;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading.Tasks;
 
 namespace excelReaderWeb.Controllers
 {
@@ -17,16 +18,16 @@ namespace excelReaderWeb.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<ActionResult> Get()
         {
-            var response =  _excelService.ReadExcelasJSON(fileName);
-            if (!String.IsNullOrEmpty(response))
-            {
-                return Ok(response);
+            var response =  await _excelService.ReadExcel(fileName);
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            { 
+                return new JsonResult(response) { StatusCode = (int)response.StatusCode, Value = response.Employee };
             }
             else
             {
-                return BadRequest(response);
+                return new JsonResult(response) { StatusCode = (int)response.StatusCode};
             }
 
         }

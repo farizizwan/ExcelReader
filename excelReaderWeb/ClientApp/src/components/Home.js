@@ -25,11 +25,11 @@ export class Home extends Component {
                 </thead>
                 <tbody>
                     {employee.map(employee =>
-                        <tr key={employee.EmployeeNumber} style={employee.EmployeeStatus === 'Regular' ? { color: 'green' } : { color: 'yellow' }}>
-                            <td>{employee.EmployeeNumber}</td>
-                            <td>{employee.FirstName}</td>
-                            <td>{employee.LastName}</td>
-                            <td>{employee.EmployeeStatus}</td>
+                        <tr key={employee.employeeNumber} style={employee.employeeStatus === 'Regular' ? { color: 'green' } : { color: 'yellow' }}>
+                            <td>{employee.employeeNumber}</td>
+                            <td>{employee.firstName}</td>
+                            <td>{employee.lastName}</td>
+                            <td>{employee.employeeStatus}</td>
                         </tr>
                     )}
                 </tbody>

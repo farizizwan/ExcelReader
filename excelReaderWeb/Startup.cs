@@ -1,3 +1,5 @@
+using excelReaderWeb.Repository.Contract;
+using excelReaderWeb.Repository.Implementation;
 using excelReaderWeb.Services.Contract;
 using excelReaderWeb.Services.Implementation;
 using Microsoft.AspNetCore.Builder;
@@ -25,6 +27,7 @@ namespace excelReaderWeb
 
             services.AddControllersWithViews();
             services.AddScoped<IExcelService, ExcelService>();
+            services.AddScoped<IReadRepository, ReadRepository>();
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
